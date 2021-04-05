@@ -1,0 +1,24 @@
+---
+
+- name: "Update packages"
+  become: true
+  shell: "yum update -y"
+
+- name: "install Docker"
+  become: true
+  yum:
+    name: ["docker"]
+    state: latest
+    update_cache: yes
+
+- name: "User Modifying"
+  become: true
+  shell: "usermod -a -G docker ec2-user"
+
+- name: "Start Docker" 
+  become: true
+  shell: "systemctl start docker && systemctl enable docker.service"
+
+- name: "Installing Wordpress docker container"
+  become: true
+  shell: "docker run -d -p 80:80 -p 443:443 wordpress"
