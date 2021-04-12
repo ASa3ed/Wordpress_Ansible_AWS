@@ -1,14 +1,17 @@
 ---
 
 - name: Installing Wordpress 
-  hosts: webserver
-  user: ec2-user
+  hosts: webservers
+  user: ubuntu
+  become: yes
   gather_facts: false
   vars:
     - ansible_host_key_checking: false
     - ansible_stdout_callback: yaml
-
-    - setup:
+    - ansible_python_interpreter: python3
+    # - setup:
     
   roles:
+    - security
     - wordpress
+    

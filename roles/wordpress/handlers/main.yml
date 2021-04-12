@@ -1,0 +1,13 @@
+# handlers file for wordpress
+- name: restart apache
+  service: 
+    name: apache2 
+    state: restarted 
+    enabled: yes
+  become: yes
+
+- name: restart MySQL
+  service: 
+    name: mysql 
+    state: started 
+    enabled: yes
