@@ -1,8 +1,8 @@
 ---
-- name: Perform full patching
-  package:
-    name: '*'
-    state: latest
+# - name: Perform full patching
+#   package:
+#     name: '*'
+#     state: latest
 
 - name: Remove undesirable packages
   package:

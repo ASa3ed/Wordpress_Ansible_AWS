@@ -12,6 +12,6 @@
     # - setup:
     
   roles:
-    - security
     - wordpress
+    - security
     
