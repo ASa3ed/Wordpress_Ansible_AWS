@@ -1,6 +1,6 @@
 # default security parameters
 allowed_ssh_networks:
-  - 102.45.12.119/24
+  - 102.40.52.207/24
   # - 10.10.10.0/24
 unnecessary_services:
   - postfix
@@ -9,3 +9,7 @@ unnecessary_software:
   - tcpdump
   - nmap-ncat
   - wpa_supplicant
+
+http_port: "80"
+https_port: "443"
+ssh_port: "22"

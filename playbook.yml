@@ -1,5 +1,4 @@
 ---
-
 - name: Installing Wordpress 
   hosts: webservers
   user: ubuntu

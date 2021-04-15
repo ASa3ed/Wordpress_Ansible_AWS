@@ -2,3 +2,9 @@
   service:
     name: sshd
     state: reloaded
+
+- name: Reload UFW
+  service:
+    name: ufw
+    state: reloaded
+    enabled: yes
