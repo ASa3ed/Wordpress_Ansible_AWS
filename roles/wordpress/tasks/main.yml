@@ -7,8 +7,6 @@
   apt:
     name:
       - nginx
-      # - mysql-server
-      # - default-mysql-server
       - mariadb-server
       - mariadb-client
       - python3-pymysql
