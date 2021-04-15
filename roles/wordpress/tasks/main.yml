@@ -8,12 +8,15 @@
     name:
       - nginx
       # - mysql-server
-      - default-mysql-server
+      # - default-mysql-server
+      - mariadb-server
+      - mariadb-client
       - python3-pymysql
       - php-mysql
       - php-fpm
-    state: latest
-    update_cache: yes  
+    state: present
+    update_cache: yes
+     
 
 - name: Install Required PHP Extensions
   apt:
@@ -57,15 +60,14 @@
     validate_certs=no
 
 - name: Extract WordPress
-  unarchive: src=/tmp/wordpress.tar.gz dest=/var/www/ copy=no
+  unarchive: src=/tmp/wordpress.tar.gz dest=/var/www/html/ copy=no
   
-
 - name: Rename sample config file
-  command: mv /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php
+  command: mv /var/www/html/wordpress/wp-config-sample.php /var/www/html/wordpress/wp-config.php
     
 - name: Update WordPress config file
   replace:
-    path: /var/www/wordpress/wp-config.php
+    path: /var/www/html/wordpress/wp-config.php
     regexp: "{{ item.regexp1 }}"
     replace: "{{ item.replace }}"
   with_items:
