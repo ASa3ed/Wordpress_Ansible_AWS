@@ -1,2 +1,2 @@
 [webservers]
-212.71.254.199 ansible_port=22  ansible_user='root' ansible_ssh_pass=tbYyQYr6gwKtxCD0EdkT ansible_ssh_private_key_file='./key.pem'
+212.71.254.199 ansible_port=22  ansible_user='root' ansible_ssh_pass=tbYyQYr6gwKtxCD0EdkT
